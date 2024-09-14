@@ -1,8 +1,5 @@
-import requests
+import subprocess
 
-def make_request():
-  response = requests.get("https://si-activities-api.onrender.com/api/activities")
-  print(response.status_code, response.text)
-
-if __name__ == "__main__":
-  make_request()
+# Inicia o subprocesso em background
+subprocess.Popen(['python', '-c', 'import requests; requests.get(\"https://example.com\")'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+print('Requisição enviada.')
